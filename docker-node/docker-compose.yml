@@ -1,6 +1,6 @@
 services:
   siteproxy:
-    image: siteproxy:latest
+    image: ghcr.io/janver/siteproxy:latest
     container_name: siteproxy-node
     restart: unless-stopped
     ports:
