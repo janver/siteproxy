@@ -1,11 +1,12 @@
-# Assuming you are using an official Node.js base image
-FROM node:22
+FROM node:22-slim
 
-# Display Node.js version
-RUN node --version
-
-# Your other Docker setup commands
-COPY . /app
 WORKDIR /app
+
+ENV NODE_ENV=production
+
+COPY bundle.mjs ./
+COPY config.json ./
+
+EXPOSE 5006
 
 CMD ["node", "bundle.mjs"]
